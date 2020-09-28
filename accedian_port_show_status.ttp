@@ -1,0 +1,6 @@
+<group name="port show status">
+Status  Connector  Port name                       State    Speed     MDI {{ _headers_ }}
+------- ---------- ------------------------------- -------- --------- ---- {{ _start_ }}
+{{ status | contains('Up', 'Down') }}    {{ connector }}      {{ port }}                          {{ state }}  {{ speed }}   {{ mdi }}
+</group>
+<output key="connector" />

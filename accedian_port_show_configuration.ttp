@@ -1,0 +1,5 @@
+<group>
+Connector  Port name                       State    Speed     MTU   MDI  MAC address
+---------- ------------------------------- -------- --------- ----- ---- -----------------
+{{ connector }}      {{ name }}                          {{ admin_state }}  {{ admin_speed }}      {{ mtu }}  Auto {{ mac | MAC }}
+</group>

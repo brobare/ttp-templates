@@ -1,0 +1,11 @@
+<group name="board show info">
+Product name       : {{ model  }}
+MAC base address   : {{ mac | MAC }}
+Unit identifier    : {{ serial }}
+Firmware version   : {{ firmware }}
+Serial number      : {{ serial }}
+Assembly           : {{ assembly }}
+Hardware options   : {{ hardware_options }}
+Manufacture config : {{ manufacture_config }}
+</group>
+<output key="connector" />
