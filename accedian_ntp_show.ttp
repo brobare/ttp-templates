@@ -1,0 +1,42 @@
+<group>
+NTP client    : {{ ntp_client }}
+NTP server    : {{ ntp_server }}
+TAI offset    : {{ tai_offset }}
+DSCP          : {{ dscp }}
+VLAN priority : {{ vlan_priority }}
+Sync mode     : {{ sync_mode | PHRASE }}
+Sync status   : {{ sync_status | PHRASE }}
+Time interval       : {{ interval || PHRASE }}
+Number of Messages  : {{ messages }}
+
+Enabled server list:
+
+Disabled server list:
+
+Current date
+   Year   : {{ year }}
+   Month  : {{ month }}
+   Day    : {{ day }}
+
+Current time
+   Hour   : {{ hour }}
+   Minutes: {{ minute }}
+   Seconds: {{ second }}
+
+UTC offset    : {{ utc_offset }}
+
+DST state     : {{ dst_state }}
+DST offset    : {{ dst_offset }}
+DST start
+   Month  : {{ dst_start_month }}
+   Week   : {{ dst_start_week }}
+   Day    : {{ dst_start_day }}
+   Hour   : {{ dst_start_hour }}
+   Minute : {{ dst_start_minute }}
+DST end
+   Month  : {{ dst_end_month }}
+   Week   : {{ dst_end_week }}
+   Day    : {{ dst_end_day }}
+   Hour   : {{ dst_end_hour }}
+   Minute : {{ dst_end_minute }}
+</group>

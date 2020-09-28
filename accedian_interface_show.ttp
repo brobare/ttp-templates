@@ -1,0 +1,3 @@
+<group>
+{{ name | notstartswith_re('-') }}                      {{ state | ORPHRASE }}  {{ dhcp }}  {{ ip }}    {{ netmask }}   {{ gateway }}     {{ info | ORPHRASE }}
+</group>

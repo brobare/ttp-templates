@@ -1,0 +1,5 @@
+<group>
+Current version    : {{ current  }}
+Rollback version   : {{ rollback | PHRASE }}
+Downloaded version : {{ downloaded | PHRASE }}
+</group>

@@ -1,0 +1,13 @@
+<group>
+Host name       : {{ hostname }}
+DHCP option     : {{ dhcp_option | PHRASE }}
+DHCP hostname   : {{ dhcp_hostname }}
+DHCP client ID  : {{ dhcp_client_id }}
+Domain          : {{ domain | default('unknown_dns') }}
+DNS server 1    : {{ dns_server_1 }}
+DNS server 2    : {{ dns_server_2 }}
+Use DHCP result : {{ use_dhcp_result }}
+Use DHCP6 result: {{ use_dhcp6_result }}
+Active DNS 1    : {{ active_dns_1 }}
+Active DNS 2    : {{ active_dns_2 }}
+</group>
