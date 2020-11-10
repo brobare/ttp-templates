@@ -1,0 +1,17 @@
+ADTRAN, Inc. OS version {{ os }}
+  Mainline Version: {{ mainline }}
+  P4 Changelist: {{ changelist }}
+  Checksum: {{ checksum }}
+Hardware version {{ hardware }}
+Boot ROM version {{ bootrom }}
+  Built on: {{ built_in }}
+Platform: {{ platform | ORPHRASE }}, part number {{ part_number }}
+Serial number {{ serial }}
+Flash: {{ flash }} bytes  DRAM: {{ dram }} bytes
+
+{{ hostname }} uptime is {{ uptime | _line_ }}
+
+System returned to ROM by {{ last_reset | ORPHRASE }}
+Current system image file is "{{ current }}"
+Boot system image file is "{{ boot }}"
+Primary system configuration file is "{{ system_config }}"
