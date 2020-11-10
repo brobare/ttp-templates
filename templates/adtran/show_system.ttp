@@ -1,0 +1,18 @@
+ADTRAN, Inc. OS version {{ os }}
+  Checksum: {{ checksum }}, built on Mon Nov 23 17:09:59 CST 2015
+Hardware version {{ hardware_version }}
+Boot ROM version {{ rom_version }}
+Platform: {{ platform | ORPHRASE }}, part number {{ part_number }}
+Serial number CFG1667143
+Flash: 97120256 bytes  DRAM: 509648896 bytes
+
+{{ hostname }} uptime is {{ uptime | _line_ }}
+
+System returned to ROM by {{ last_reset }}
+Current system image file is "{{ system_image }}"
+Boot system image file is "{{ boot_image }}"
+
+Power Source:  {{ power }}
+System primary clock source configuration:   {{ pri_clock_source }}
+System secondary clock source configuration: {{ sec_clock_source }}
+System current active clock source:          {{ act_clock_source }}
