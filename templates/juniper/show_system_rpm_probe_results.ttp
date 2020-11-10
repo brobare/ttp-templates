@@ -1,0 +1,17 @@
+<group name="results">
+    Owner: {{ owner }}, Test: {{ test }}
+    Target address: {{ target }}, Probe type: {{ type }}, Icmp-id: 11, Test size: {{ size }} probes
+      Probe sent time: {{ probe_sent_time | _line_ }}
+      Probe rcvd/timeout {{ probe_rcvd_time | date }}, No hardware timestamps
+      Rtt: {{ rtt }} usec, Round trip jitter: {{ rtj }} usec
+      Round trip interarrival jitter: {{ rti }} usec
+<group name="iteration.{{ iteration }}">
+    Results over {{ iteration }} {{ ignore }}:
+      Probes sent: {{ probes_sent }}, Probes received: {{ probes_received }}, Loss percentage: {{ loss_percentage }}
+<group name="measurement">
+      Measurement: {{ measurement_type | ORPHRASE }}
+        Samples: {{ samples }}, Minimum: {{ minimum }} usec, Maximum: {{ maximum }} usec, Average: {{ avg }} usec, Peak to peak: {{ peak_to_peak }} usec,
+        Stddev: {{ stddev }} usec, Sum: {{ stddev_sum }} usec
+</group>
+</group>
+</group>
