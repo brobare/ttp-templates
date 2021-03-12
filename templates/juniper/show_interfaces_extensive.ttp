@@ -1,0 +1,86 @@
+<group>
+Physical interface: {{ interface }}, {{ status }}, Physical link is {{ state }}
+  Description: {{ description | ORPHRASE }}
+  Link-level type: Ethernet, MTU: {{ mtu }}, LAN-PHY mode, Link-mode: {{ link_mode }},
+  Speed: {{ speed }}mbps, BPDU Error: None, Loop Detect PDU Error: None,
+  Current address: {{ current_address }}, Hardware address: {{ hardware_address }}
+  Last flapped   : {{ last_flapped | ORPHRASE }} ({{ flap_ago | ORPHRASE }} ago)
+  Statistics last cleared: Never
+<group name="traffic_statistics">
+   Input  bytes  :          {{ input_bytes }}    {{ input_bps }}  bps
+   Output bytes  :          {{ output_bytes }}   {{ output_bps }} bps
+   Input  packets:          {{ input_packets }}  {{ input_pps }}  pps
+   Output packets:          {{ output_packets }} {{ output_pps }} pps
+</group>
+<group name="{{ direction }}_errors">
+  {{ direction }} errors:
+    Errors: {{ input_errors }}, Drops: {{ drops }}, Framing errors: {{ framing }}, Runts: {{ runts }}, Policed discards: {{ policed_discards }},
+    L3 incompletes: {{ incompletes }}, L2 channel errors: {{ l2_channel }}, L2 mismatch timeouts: {{ l2_mismatch }},
+    FIFO errors: {{ fifo }}, Resource errors: {{ resource_errors }}
+  {{ direction }} errors:
+    Carrier transitions: {{ transitions }}, Errors: {{ errors }}, Drops: {{ drops }}, Collisions: {{ collisions }}, Aged packets: {{ aged }},
+    FIFO errors: {{ fifo }}, HS link CRC errors: {{ link_crc }}, MTU errors: {{ mtu }}, Resource errors: {{ resource }}
+</group>
+<group name="queue.{{ queue }}">
+    {{ queue }} {{ packets | DIGIT }} {{ transmitted  | DIGIT }} {{ dropped  | DIGIT }}
+</group>
+<group name="queues">
+    {{ queue_no | DIGIT }}  {{ queue_name }}
+</group>
+    Bit errors              {{ err_seconds }}
+    Errored blocks          {{ err_blocks }}
+<group name="mac_statistics">
+    Total octets         {{ rx_total_octets }}      {{ tx_total_octets }}
+    Total packets        {{ rx_total_packets }}     {{ tx_total_packets }}
+    Unicast packets      {{ rx_unicast_packets }}   {{ tx_unicast_packets }}
+    Broadcast packets    {{ rx_broadcast_packets }} {{ tx_broadcast_packets }}
+    Multicast packets    {{ rx_multicast_packets }} {{ tx_multicast_packets }}
+    CRC/Align errors     {{ rx_crc_errors }}        {{ tx_crc_errors }}
+    FIFO errors          {{ rx_fifo_errors }}       {{ tx_fifo_errors }}
+    MAC control frames   {{ rx_mac_control }}       {{ tx_mac_control }}
+    MAC pause frames     {{ rx_mac_pause }}         {{ tx_mac_pause }}
+    Oversized frames     {{ oversized }}
+    Jabber frames        {{ jabber }}
+    Fragment frames      {{ fragment }}
+    VLAN tagged frames   {{ vlan_tagged }}
+    Code violations      {{ code_violations }}
+</group>
+  <group name="filter_statistics">
+    Input packet count         {{ input_packet_count }}
+    Input packet rejects       {{ input_packet_rejects }}
+    Input DA rejects           {{ input_da_rejects }}
+    Input SA rejects           {{ input_sa_rejects }}
+    Output packet count        {{ output_packet_count }}
+    Output packet pad count    {{ output_packet_pad }}
+    Output packet error count  {{ output_packet_error }}
+</group>
+<group name="negotiation">
+    Negotiation status: {{ status }}
+        Link mode: {{ partner }}, Flow control: {{ flow_control }}, Remote fault: {{ fault }}
+        Flow control: {{ flow_control_1 }}, Remote fault: Link {{ remote_fault_1 }}
+</group>
+<group name="cos">
+    {{ cos | DIGIT }} {{ queue }} {{ percentage | DIGIT }} {{ bandwidth_bps | DIGIT }} {{ bandwidth_percent | DIGIT }} {{ buffer }} {{ priority }} {{ limit }}
+</group>
+<group name="unit.{{ unit }}">
+  Logical interface {{ ignore() }}.{{ unit }} (Index {{ index }}) (SNMP ifIndex {{ snmp }}) (Generation {{ ignore() }})
+<group name="{{ name }}" contains="name">
+    {{ name | re('(Traffic|Local)') }} statistics:
+     Input  bytes  :  {{ input_bytes }}
+     Output bytes  :  {{ output_bytes }}
+     Input  packets:  {{ input_packets }}
+     Output packets:  {{ output_packets }}
+</group>
+<group name="Transit">
+    Transit statistics:
+     Input  bytes  :  {{ input_bytes }}      {{ input_bps }} bps
+     Output bytes  :  {{ output_bytes }}     {{ output_bps }} bps
+     Input  packets:  {{ input_bytes }}      {{ input_pps }} pps
+     Output packets:  {{ output_packets }}   {{ output_pps }} pps
+</group>
+    Protocol inet, MTU: {{ mtu }}
+<group name="address">
+        Destination: {{ destination }}/{{ mask }}, Local: {{ local }},
+</group>
+</group>
+</group>
