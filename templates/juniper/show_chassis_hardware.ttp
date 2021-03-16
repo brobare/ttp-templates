@@ -1,0 +1,30 @@
+<group name="chassis_{{ chassis }}" contains="chassis">
+member{{ chassis }}:
+<group group="chassis_info">
+Chassis                                {{ serial }}      {{ description | ORPHRASE }}
+</group>
+<group name="midplane">
+Midplane         REV {{ rev }}   {{ pn }}  {{ serial }} {{ description | ORPHRASE }}
+</group>
+<group name="pem {{ pem }}">
+PEM {{ pem }} Rev {{ rev }} {{ pn }} {{ serial }} {{ description | ORPHRASE }}
+</group>
+<group name="re {{ routing_engine }}">
+Routing Engine {{ routing_engine }} REV {{ rev }} {{ pn }} {{ serial }} {{ description | ORPHRASE }}
+</group>
+<group name="scb {{ scb }}">
+CB {{ scb }} REV {{ rev }} {{ pn }} {{ serial }} {{ description | ORPHRASE }}
+</group>
+<group name="fpc.{{ fpc }}">
+FPC {{ fpc }} REV {{ rev }}  {{ pn }} {{ serial }} {{ description | ORPHRASE }}
+<group name="mic.{{ mic }}">
+  MIC {{ mic }}          REV {{ rev }} {{ pn }} {{ serial }} {{ description | ORPHRASE }}
+<group name="pic.{{ pic }}">
+    PIC {{ pic }} BUILTIN BUILTIN {{ description | ORPHRASE }}
+<group name="xcvr.{{ xcvr }}">
+      Xcvr {{ xcvr }} {{ pn }} {{ serial }} {{ description | ORPHRASE }}
+</group>
+</group>
+</group>
+</group>
+</group>
